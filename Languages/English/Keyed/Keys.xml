@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <MoreReasnonableRoomSpace>More Reasnonable Room Space</MoreReasnonableRoomSpace>
+    <SpacefullnessExplain>Replace the vanilla space formula with follows:\n\nSpacefullness = penalty*(freecell/totalcell)*100%</SpacefullnessExplain>
+
+    <SpacefullnessLabel>Set minimal spacefullness for each level:</SpacefullnessLabel>
+    <Rathertight>Rather tight: </Rathertight>
+    <AverageSized>Average-Sized: </AverageSized>
+    <SomewhatSpacious>Somewhat Spacious: </SomewhatSpacious>
+    <QuiteSpacious>Quite Spacious: </QuiteSpacious>
+    <VerySpacious>Very Spacious: </VerySpacious>
+    <ExtremelySpacious>Extremely Spacious: </ExtremelySpacious>
+
+    <PenaltyExplain>Reduces spacefullness if the room size smaller than: </PenaltyExplain>
+    <PenaltyFormula>(e.g., preventing a 1*2 jail considered as "Extremely Spacious")\n\nPenalty can be calculated as follows:\n\npenalty = totalcell/configured value</PenaltyFormula>
+
+    <Comment>\n\nRestart your game to apply settings above</Comment>
+</LanguageData>
