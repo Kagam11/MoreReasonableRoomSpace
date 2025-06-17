@@ -64,7 +64,7 @@ namespace MoreReasonableRoomSpace
             listing.Label("Comment".Translate());
             listing.GapLine();
 
-            listing.Label("CorrectionFactor".Translate());
+            listing.Label("CorrectionFactorExplain".Translate());
             settings.CorrectionFactor = listing.FloatEntry(nameof(settings.CorrectionFactor).Translate(), settings.CorrectionFactor, 0f);
             listing.GapLine();
 
