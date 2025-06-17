@@ -12,7 +12,9 @@
     <ExtremelySpacious>极度宽敞：</ExtremelySpacious>
 
     <PenaltyExplain>降低小于以下尺寸房间的宽敞度：</PenaltyExplain>
-    <PenaltyFormula>（例如防止将1x2的监狱视为“极度宽敞”）\n\n过小惩罚公式如下：\n\n过小惩罚 = 房间大小/设置值</PenaltyFormula>
+    <PenaltyFormula>（例如防止将1x2的监狱视为“极度宽敞”）\n\n过小惩罚公式如下：\n\n过nijuede小惩罚 = 房间大小/设置值</PenaltyFormula>
+
+    <CorrectionFactor>如果你觉得空间分数提高评价太多，可以降低以下值来降低计算印象时的比例\n在计算印象分时，会先将空间分数乘以这个值（百分比）</CorrectionFactor>
 
     <Comment>\n\n修改设置后需要重启才能生效</Comment>
 </LanguageData>

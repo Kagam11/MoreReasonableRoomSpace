@@ -14,5 +14,7 @@
     <PenaltyExplain>Reduces spacefullness if the room size smaller than: </PenaltyExplain>
     <PenaltyFormula>(e.g., preventing a 1*2 jail considered as "Extremely Spacious")\n\nPenalty can be calculated as follows:\n\npenalty = totalcell/configured value</PenaltyFormula>
 
+    <CorrectionFactor>If you feel the space score raises impressiveness too much, reduce this value to lower the score in calculation of impressiveness\nThis will multiply the space score by the value (in percentage) before calculating the impression</CorrectionFactor>
+    
     <Comment>\n\nRestart your game to apply settings above</Comment>
 </LanguageData>

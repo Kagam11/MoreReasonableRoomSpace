@@ -14,6 +14,7 @@ namespace MoreReasonableRoomSpace
         public float ExtremelySpacious = 85f;
 
         public int PenaltyMinSize = 25;
+        public float CorrectionFactor = 100f;
 
         public override void ExposeData()
         {
@@ -25,6 +26,7 @@ namespace MoreReasonableRoomSpace
             Scribe_Values.Look(ref ExtremelySpacious, nameof(ExtremelySpacious), 85f);
 
             Scribe_Values.Look(ref PenaltyMinSize, nameof(PenaltyMinSize), 25);
+            Scribe_Values.Look(ref CorrectionFactor, nameof(CorrectionFactor), 100f);
             base.ExposeData();
         }
     }
@@ -62,6 +64,10 @@ namespace MoreReasonableRoomSpace
             listing.Label("Comment".Translate());
             listing.GapLine();
 
+            listing.Label("CorrectionFactor".Translate());
+            settings.CorrectionFactor = listing.FloatEntry(nameof(settings.CorrectionFactor).Translate(), settings.CorrectionFactor, 0f);
+            listing.GapLine();
+
             bool buttonPressed = listing.ButtonText("Reset".Translate());
 
             listing.End();
@@ -75,6 +81,7 @@ namespace MoreReasonableRoomSpace
                 settings.VerySpacious = 75f;
                 settings.ExtremelySpacious = 85f;
                 settings.PenaltyMinSize = 25;
+                settings.CorrectionFactor = 100f;
             }
         }
     }
@@ -84,6 +91,12 @@ namespace MoreReasonableRoomSpace
         {
             var buffer = val.ToString("F2");
             ls.TextFieldNumericLabeled(label, ref val, ref buffer, min, max);
+            return val;
+        }
+        public static float FloatEntry(this Listing_Standard ls, string label, float val, float min)
+        {
+            var buffer = val.ToString("F2");
+            ls.TextFieldNumericLabeled(label, ref val, ref buffer, min);
             return val;
         }
     }

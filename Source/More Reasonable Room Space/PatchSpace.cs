@@ -65,7 +65,7 @@ namespace MoreReasonableRoomSpace
             {
                 if (cell.Standable(room.Map)) standableCellCount++;
             }
-            var spacefullness = (350 * (standableCellCount) / totalCellCount);
+            var spacefullness = (100 * (standableCellCount) / totalCellCount);
             var penalty = Math.Min(totalCellCount / MrrsMod.settings.PenaltyMinSize, 1);
             __result = (float)Math.Round(penalty * spacefullness, 2);
             return false;
@@ -78,7 +78,7 @@ namespace MoreReasonableRoomSpace
         {
             double factor1 = (double)GetFactor(room.GetStat(RoomStatDefOf.Wealth) / 1500f);
             float factor2 = GetFactor(room.GetStat(RoomStatDefOf.Beauty) / 3f);
-            float factor3 = GetFactor(room.GetStat(RoomStatDefOf.Space) / 35f);
+            float factor3 = GetFactor(room.GetStat(RoomStatDefOf.Space) * (MrrsMod.settings.CorrectionFactor / 100) / 35f);
             float factor4 = GetFactor((float)(1.0 + (double)Mathf.Min(room.GetStat(RoomStatDefOf.Cleanliness), 0.0f) / 2.5));
             float a = Mathf.Lerp((float)((factor1 + (double)factor2 + (double)factor3 + (double)factor4) / 4.0), Mathf.Min((float)factor1, Mathf.Min(factor2, Mathf.Min(factor3, factor4))), 0.35f);
             float b = factor3 * 5f;
