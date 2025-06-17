@@ -56,7 +56,7 @@ namespace MoreReasonableRoomSpace
         {
             if (room.PsychologicallyOutdoors)
             {
-                __result = 100f;
+                __result = 350f;
                 return false;
             }
             float totalCellCount = room.Cells.Count();
@@ -65,7 +65,7 @@ namespace MoreReasonableRoomSpace
             {
                 if (cell.Standable(room.Map)) standableCellCount++;
             }
-            var spacefullness = (100 * (standableCellCount) / totalCellCount);
+            var spacefullness = (350 * (standableCellCount) / totalCellCount);
             var penalty = Math.Min(totalCellCount / MrrsMod.settings.PenaltyMinSize, 1);
             __result = (float)Math.Round(penalty * spacefullness, 2);
             return false;

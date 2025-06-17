@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <MoreReasnonableRoomSpace>更合理的房间宽敞计算</MoreReasnonableRoomSpace>
-    <SpacefullnessExplain>将原版房间空间计算替换为宽敞程度，公式如下：\n\n宽敞度 = 过小惩罚*(空格/总大小)*100%</SpacefullnessExplain>
+    <SpacefullnessExplain>将原版房间空间计算替换为宽敞程度，公式如下：\n\n宽敞度 = 过小惩罚*(空格/总大小)*100%*350</SpacefullnessExplain>
 
     <SpacefullnessLabel>设置每个等级的最小宽敞度：</SpacefullnessLabel>
     <Rathertight>有点狭窄：</Rathertight>
