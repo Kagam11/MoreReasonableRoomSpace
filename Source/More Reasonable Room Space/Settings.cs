@@ -1,32 +1,32 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
+using static MoreReasonableRoomSpace.Extensions;
 
 namespace MoreReasonableRoomSpace
 {
     public class MrrsSettings : ModSettings
     {
-        public float Rathertight = 15f;
-        public float AverageSized = 30f;
-        public float SomewhatSpacious = 45f;
-        public float QuiteSpacious = 60f;
-        public float VerySpacious = 75f;
-        public float ExtremelySpacious = 85f;
+        public float Rathertight = DefaultRathertight;
+        public float AverageSized = DefaultAverageSized;
+        public float SomewhatSpacious = DefaultSomewhatSpacious;
+        public float QuiteSpacious = DefaultQuiteSpacious;
+        public float VerySpacious = DefaultVerySpacious;
+        public float ExtremelySpacious = DefaultExtremelySpacious;
 
-        public int PenaltyMinSize = 25;
-        public float CorrectionFactor = 100f;
+        public int PenaltyMinSize = DefaultPenaltyMinSize;
+        public float CorrectionFactor = DefaultCorrectionFactor;
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref Rathertight, nameof(Rathertight), 15f);
-            Scribe_Values.Look(ref AverageSized, nameof(AverageSized), 30f);
-            Scribe_Values.Look(ref SomewhatSpacious, nameof(SomewhatSpacious), 45f);
-            Scribe_Values.Look(ref QuiteSpacious, nameof(QuiteSpacious), 60f);
-            Scribe_Values.Look(ref VerySpacious, nameof(VerySpacious), 75f);
-            Scribe_Values.Look(ref ExtremelySpacious, nameof(ExtremelySpacious), 85f);
+            Scribe_Values.Look(ref Rathertight, nameof(Rathertight), DefaultRathertight);
+            Scribe_Values.Look(ref AverageSized, nameof(AverageSized), DefaultAverageSized);
+            Scribe_Values.Look(ref SomewhatSpacious, nameof(SomewhatSpacious), DefaultSomewhatSpacious);
+            Scribe_Values.Look(ref QuiteSpacious, nameof(QuiteSpacious), DefaultQuiteSpacious);
+            Scribe_Values.Look(ref VerySpacious, nameof(VerySpacious), DefaultVerySpacious);
+            Scribe_Values.Look(ref ExtremelySpacious, nameof(ExtremelySpacious), DefaultExtremelySpacious);
 
-            Scribe_Values.Look(ref PenaltyMinSize, nameof(PenaltyMinSize), 25);
-            Scribe_Values.Look(ref CorrectionFactor, nameof(CorrectionFactor), 100f);
+            Scribe_Values.Look(ref PenaltyMinSize, nameof(PenaltyMinSize), DefaultPenaltyMinSize);
+            Scribe_Values.Look(ref CorrectionFactor, nameof(CorrectionFactor), DefaultCorrectionFactor);
             base.ExposeData();
         }
     }
@@ -60,33 +60,42 @@ namespace MoreReasonableRoomSpace
             var penaltyBuffer = settings.PenaltyMinSize.ToString();
             listing.IntEntry(ref settings.PenaltyMinSize, ref penaltyBuffer);
             listing.Label("PenaltyFormula".Translate());
-
-            listing.Label("Comment".Translate());
             listing.GapLine();
 
             listing.Label("CorrectionFactorExplain".Translate());
             settings.CorrectionFactor = listing.FloatEntry(nameof(settings.CorrectionFactor).Translate(), settings.CorrectionFactor, 0f);
             listing.GapLine();
 
+            listing.Label("Comment".Translate());
+            listing.GapLine();
             bool buttonPressed = listing.ButtonText("Reset".Translate());
 
             listing.End();
             base.DoSettingsWindowContents(inRect);
             if (buttonPressed)
             {
-                settings.Rathertight = 15f;
-                settings.AverageSized = 30f;
-                settings.SomewhatSpacious = 45f;
-                settings.QuiteSpacious = 60f;
-                settings.VerySpacious = 75f;
-                settings.ExtremelySpacious = 85f;
-                settings.PenaltyMinSize = 25;
-                settings.CorrectionFactor = 100f;
+                settings.Rathertight = DefaultRathertight;
+                settings.AverageSized = DefaultAverageSized;
+                settings.SomewhatSpacious = DefaultSomewhatSpacious;
+                settings.QuiteSpacious = DefaultQuiteSpacious;
+                settings.VerySpacious = DefaultVerySpacious;
+                settings.ExtremelySpacious = DefaultExtremelySpacious;
+                settings.PenaltyMinSize = DefaultPenaltyMinSize;
+                settings.CorrectionFactor = DefaultCorrectionFactor;
             }
         }
     }
     public static class Extensions
     {
+        public const float DefaultRathertight = 15f;
+        public const float DefaultAverageSized = 30f;
+        public const float DefaultSomewhatSpacious = 45f;
+        public const float DefaultQuiteSpacious = 60f;
+        public const float DefaultVerySpacious = 75f;
+        public const float DefaultExtremelySpacious = 85f;
+
+        public const int DefaultPenaltyMinSize = 25;
+        public const float DefaultCorrectionFactor = 100f;
         public static float FloatEntry(this Listing_Standard ls, string label, float val, float min, float max)
         {
             var buffer = val.ToString("F2");
