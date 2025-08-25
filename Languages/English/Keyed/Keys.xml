@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <MoreReasnonableRoomSpace>More Reasnonable Room Space</MoreReasnonableRoomSpace>
+    <MoreReasonableRoomSpace>More Reasonable Room Space</MoreReasonableRoomSpace>
     <SpacefullnessExplain>Replace the vanilla space formula with follows:\n\nSpacefullness = penalty*(freecell/totalcell)*100%</SpacefullnessExplain>
 
     <SpacefullnessLabel>Set minimal spacefullness for each level:</SpacefullnessLabel>

@@ -38,7 +38,7 @@ namespace MoreReasonableRoomSpace
         {
             settings = GetSettings<MrrsSettings>();
         }
-        public override string SettingsCategory() => "MoreReasnonableRoomSpace".Translate();
+        public override string SettingsCategory() => "MoreReasonableRoomSpace".Translate();
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
